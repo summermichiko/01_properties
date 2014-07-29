@@ -1,9 +1,9 @@
 describe("Properties", function() {
-	var object;
+	var object; //defined globally here
 	
-	beforeEach(function() {
-	  object = {};
-	  setSomePropertiesOn(object);
+	beforeEach(function() { //before each test is run, this is run
+	  object = {}; //making a brand new object
+	  setSomePropertiesOn(object); //setting some properties on it
 	});
 
 	describe("setSomePropertiesOn", function() {
@@ -21,3 +21,13 @@ describe("Properties", function() {
 		});
 	});
 });
+
+var setSomePropertiesOn = function(object)  {
+    object.x = 7;
+    object.y = 8;
+    object.onePlus = function(number)    {
+        return number + 1;
+    }
+}
+
+console.log(setSomePropertiesOn.x);
